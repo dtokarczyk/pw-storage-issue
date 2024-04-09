@@ -1,0 +1,19 @@
+{
+  "name": "emodule-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker run --env-file .env --rm -v ./:/tests -w /tests --ipc=host mcr.microsoft.com/playwright:v1.43.0-jammy npx playwright test",
+    "test:updateSnapshots": "docker run --env-file .env --rm -v ./:/tests -w /tests --ipc=host mcr.microsoft.com/playwright:v1.43.0-jammy npx playwright test --update-snapshots",
+    "test:ui": "npx playwright test --ui --ignore-snapshots"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.43.0",
+    "@types/node": "20.12.5",
+    "dotenv": "^16.4.5"
+  }
+}
